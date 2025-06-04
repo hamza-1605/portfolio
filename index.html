@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Sajid - My Portfolio Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/HS-logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/995129fb81.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px; 
+    }
+    body{
+        background-color: rgb(5, 5, 45);
+        color: white;
+        font-family: "Lato", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+    /* --------------------------------------- */
+    /* ---------------- Navbar --------------- */
+    /* --------------------------------------- */
+    header{
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        height: 65px;
+        padding: 3px;
+        background-color: rgb(6, 6, 74) ;
+    }
+
+    nav .logo{
+        display: flex;
+        width: 30%;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    nav .logo img{
+        width: 60px;
+        transition: 0.7s;
+    }
+    nav .logo img:hover{
+        /* transform: rotate(-360deg); */
+        transform: scale(1.1, 1.1);
+    }
+    nav .logo .name{
+        font-size: 28px;
+        transition: 0.5s;
+    }
+    nav .logo .name:hover{
+        transform: scale(1.1, 1.1);
+    }
+    nav .logo .name a{
+        text-decoration: none;
+        color: white;
+    }
+
+    nav .navi{
+        display: flex;
+        align-items: center;
+        width: 40%;
+    }
+    nav .navi ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    nav .navi ul li{
+        list-style: none;
+        /* margin-right: 10px; */
+    }
+    nav .navi ul li a{
+        text-decoration: none;
+        color: white;
+        position: relative;
+    }
+    nav .navi ul li a::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background-color: #6f40bb;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.33s;
+    }
+    nav .navi ul li a:hover::after{
+        width: 100%;
+    }
+
+    .Gold{
+        color: goldenrod;
+    }
+    .justified {
+       text-align: justify;
+       text-justify: inter-word;
+    }
+    /* --------------------------------------- */
+    /* -------------- Front Page ------------- */
+    /* --------------------------------------- */
+    #home{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        height: calc(100vh - 72px);
+    }
+
+    #intro, #introPic{
+        width: 40%;
+        height: 100%;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+    #intro{
+        flex-direction: column;
+        font-size: 25px;
+    }
+    #greet{
+        padding-top: 27%;
+    }
+    #intro h2{
+        margin: 3% 0;
+    }
+    #element{
+        font-size: xx-large;  
+        font-weight: 600;
+    }
+    #introPic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #introPic img{
+        width: 30vw;
+        border-radius: 50%;
+        border: 3px solid #6f40bb;
+    }
+
+    .buttons{
+        margin-top: 40px ;
+    }
+    .buttons button{
+        margin-right: 15px;
+        margin-top: 10px;
+        padding: 15px;
+        border: 1px solid white;
+        border-radius: 5px;
+        background-color: rgb(6, 6, 74);
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        transition: 0.5s;
+    }
+    .buttons button:hover{
+        background-color: #5423a3;
+        cursor: pointer;
+    }
+    /* --------------------------------------- */
+    /* ----------------- about --------------- */
+    /* --------------------------------------- */
+    .container{
+        padding: 10px 10%;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #about{
+        padding-top: 20px;
+    }
+    .about-col1{
+        flex-basis: 35%;
+    }
+    .about-col1 img{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .about-col2{
+        flex-basis: 60%;
+        margin-top: 5px;
+    }
+    .sub-title{
+        font-size: 50px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+    .tab-group{
+        margin: 25px 0 10px;
+        display: flex;
+    }
+
+    .tab-links{
+        margin-right: 50px;
+        font-size: 20px;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+    }
+    .tab-links::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background-color: #6f40bb;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+    }
+    .tab-links.active-link::after{
+        width: 50%;
+    }
+
+    .tab-contents{
+        margin-top: 20px;
+        display: none;
+        font-size: 16px;
+    }
+    .tab-contents ul li{
+        list-style: none;
+        margin-bottom: 15px;
+    }
+    .tab-contents ul li span{
+        color: yellow;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .tab-contents.active-tab{
+        display: block;
+    }
+    
+    /* --------------------------------------- */
+    /* --------------- services -------------- */
+    /* --------------------------------------- */
+    #services{
+        margin: 8% 0; 
+    }
+    .services-list{
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+        grid-gap: 45px;
+        margin-top: 40px;
+    }
+    .services-list div{
+        padding: 33px;
+        background-color: #222124;
+        border-radius: 11px;
+        font-size: 16px;
+        transition: 0.5s;
+    }
+    .services-list div h2{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 7px ;
+    }
+    .services-list div i{
+        font-size: 70px;
+        margin-bottom: 21px;
+    }
+    .services-list div a{
+        text-decoration: none;
+        color: white;
+        margin-top: 13px;
+        display: inline-block;
+        padding: 7px;
+        border: 1px solid white;
+        border-radius: 7px;
+    }
+    .services-list div:hover{
+        transform: translateY(-15px);
+        background-color: #6f40bb;
+    }
+
+    /* --------------------------------------- */
+    /* -------------- portfolio -------------- */
+    /* --------------------------------------- */
+    #portfolio{
+        margin: 8% 0;
+    }
+   .work-list{
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+        grid-gap: 50px;
+        margin-top: 40px;
+    }
+    .work{
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+    .work img{
+        width: 100%;
+        border-radius: 15px;
+        display: block;
+        transition: 0.5s;
+    }
+    .work:hover img{
+        transform: scale(1.1);
+    }
+    .layer{
+        padding: 0 10px;
+        height: 0;
+        width: calc(100% - 20px);
+        background: linear-gradient( rgba(0,0,0,0.7), #6f40bbb9 );
+        border-radius: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 15px;
+        transition: 0.5s;
+    }
+    .work:hover .layer{
+        height: 100%;
+    }
+    .layer h3{
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    .layer a{
+        color: yellow;
+        text-decoration: none;
+        background-color: #000000;
+        line-height: 50px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .btn{
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        text-decoration: none;  
+        color: white;
+        border: 1px solid rgb(58, 50, 70);
+        padding: 14px 50px;
+        border-radius: 10px;
+        transition: 0.4s;
+    }
+    .btn:hover{
+        background-color: #6f40bb;
+    }
+    /* --------------------------------------- */
+    /* --------------- contact --------------- */
+    /* --------------------------------------- */
+    #contact h1{
+        padding: 10px 0;
+    }
+    .contact-left{
+        flex-basis: 35%;
+    }
+    .contact-right{
+        flex-basis: 60%;
+    }
+    .contact-left p{
+        font-size: 19px;
+        margin: 30px 0;
+    }
+    .contact-left p i{
+        font-size: 20px;
+        margin-right: 10px;
+        color: yellow;
+    }
+    .social-icons{
+        padding: 10px 0;
+    }
+    .social-icons i{
+        color: white;;
+        font-size: 25px;
+        margin: 20px 25px 20px 0;
+        transition: 0.3s;
+    }
+    .social-icons i:hover{
+        /* transform: translateY(-7px); */
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    .social-icons :nth-child(1):hover{
+        color: #0866FF;
+    }
+    .social-icons :nth-child(2):hover{
+        color: #E02FAE;
+    }
+    .social-icons :nth-child(3):hover{
+        color: #08e35c;
+    }
+    .social-icons :nth-child(4):hover{
+        color: #2864AA;
+    }
+    form{
+        width: 100%;
+    }
+    form input, form textarea{
+        width: 100%;
+        margin: 15px 0;
+        padding: 15px;
+        border: none;
+        outline: none;
+        border-radius: 8px;
+        background-color: #222124;
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    textarea{
+        resize: none;
+        font-family: "Lato", sans-serif;
+    }
+    .submit{
+        display: inline;
+        margin: 20px 2px;
+        padding: 15px 50px;
+        border-radius: 10px;
+        background-color: rgb(6, 6, 74);
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .submit:hover{
+        background-color: #6f40bb;
+    }
+    #form-msg{
+        color: #0866FF;
+        margin: 20px 0;
+        display: block;
+    }
+    /* --------------------------------------- */
+    /* ---------------- footer --------------- */
+    /* --------------------------------------- */
+    .copyright{
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+        padding: 50px 0;
+        background-color: #06064A;
+    }
+
+    .navi .fa-solid{
+        display: none;
+    }
+    nav .navi ul{
+        transition: 0.7s;
+    }
+
+    /* -------------------------css for smaller screens-------------------------------- */
+    @media only screen and (max-width: 800px){
+        nav{
+            height: 100px;
+        }
+        nav .logo{
+            width: 80%;
+        }
+        nav .logo .name{
+            font-size: 5.5vw;
+        }
+        nav .navi{
+            justify-content: flex-end;
+        }
+        nav .navi .fa-solid{
+            display: inline-block;
+            border: 1px solid white;
+            padding: 3px;
+            border-radius: 3px;
+            margin: 20px;
+        }
+        nav .navi ul{
+            display: block;
+            position: fixed;
+            width: 180px;
+            height: 100vh;
+            background-color: #0866FF;
+            border-left: 2px solid rgb(0, 0, 0);
+            top: 0;
+            right: -180px;
+        }
+        nav .navi ul li{
+            display: block;
+            font-size: 14px;
+            margin: 20px;
+        }
+
+        /* --------- small home css -------- */
+        #home{
+            flex-direction: column-reverse;
+            justify-content: space-evenly;
+            height: 80vh;
+        }
+        #intro , #introPic{
+            width: 100%;
+        }
+        #intro{
+            font-size: 16px;
+            text-align: center;
+            height: max-content;
+        }
+        #greet{
+            padding-top: 0%;
+        }
+        #element{
+            font-size: 24px;
+        }
+        #introPic{
+            height: max-content;
+        }
+        #introPic img{
+            /* width: 500px; */
+            width: 70vw;
+            margin-top: 20px;
+        }
+        .buttons button{
+            margin-right: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .sub-title{
+            font-size: 40px;
+            margin-top: 40px;
+        }
+        /* ------------ about --------- */
+        .about-col1 , .about-col2{
+            flex-basis: 100%;
+        }
+        .about-col1{
+            display: flex;
+            justify-content: center;
+        }
+        .about-col1 img{
+            width: 70%;
+        }
+        .tab-links{
+            margin-right: 25px;
+            font-size: 19px;
+        }
+        .about-col2{
+            font-size: 14px;
+        }
+        .about-col2 h1{
+            margin-top: 20px;
+        }
+        /* -----------contact--------- */ 
+        .contact-left , .contact-right{
+            flex-basis: 100%;
+        }
+        form input , form textarea{
+            width: 95%;
+        }
+        .submit{
+            font-size: 14px;
+            padding: 12px 40px;
+        }
+        .copyright{
+            font-size: 13px;
+        }
+    }
+
+</style>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="images/HS-logo.png" alt="HS Logo"></a>
+                <div class="name"><a href="#"><span class="Gold">H</span>amza <span class="Gold">S</span>ajid</a></div>
+            </div>
+            <div class="navi">
+                <!-- menu button -->
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>  
+                <ul id="navList">
+                    <!-- close button -->
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div id="home">
+                <div id="intro">
+                    <h2 id="greet">Hi there!</h2>
+                    <h2>My Name is <span class="Gold">Hamza Sajid</span>.</h2>
+                    <h2>& I am a passionate</h2>
+                    <span id="element" class="Gold"></span>
+                    <div class="buttons">
+                        <a id="cvLink" href="/resources/Hamza Sajid Resume.pdf" download hidden></a>
+                        <button type="button" onclick="resumeDownload()">Download Resume</button>
+                        <button type="button" onclick="openGithub()">Visit Github</button>
+                    </div>
+                </div>
+                <div id="introPic">
+                    <img src="images/welcome.png" alt="G.O.A.T">
+                </div>
+            </div>
+        </div>
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col1">
+                        <img src="/images/hmz.jpg" alt="">
+                    </div>
+                    <div class="about-col2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p class="justified">I'm Hamza Sajid, a passionate web developer and software engineering student with hands-on experience in building responsive and user-friendly web applications. I have a solid foundation in HTML, CSS, JavaScript, and an intermediate command over the MERN stack. Over the past few years, I've built multiple personal and university projects — from fun games and weather apps to full-stack platforms like iNotebook and e-commerce-style sites like Farm2Door.</p>
+
+                        <div class="tab-group">
+                            <div class="tab-links active-link" onclick="opentab('skills')">Skills</div>
+                            <div class="tab-links" onclick="opentab('experience')">Experience</div>
+                            <div class="tab-links" onclick="opentab('education')">Education</div>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Web Engineer</span><br>Web App Development</li>
+                                <li><span>Software Engineer</span><br>Sofware Development</li>
+                                <li><span>MERN Stack</span><br>Specialization in MERN Stack</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>N/A</span><br>No experience so far. I am a Fresher </li>
+                                <li><span></span><br>  </li>
+                                <li><span></span><br>  </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2025</span><br>Bachelors in Software Engineering</li>
+                                <li><span>2021</span><br>Intermediate in Computer Science</li>
+                                <li><span></span><br></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title">My Services</h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-globe"></i>
+                        <h2>Web Development</h2>
+                        <p class="justified">Web developer creating responsive and high-performance websites and applications. I specialize in web engineering using HTML, CSS & JavaScript. I focus on performance, scalability, and clean code to deliver reliable front-end solutions.</p>
+                        <a href="https://www.geeksforgeeks.org/web-development/" target="_blank">Learn More</a>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-react"></i>
+                        <h2>MERN Stack</h2>
+                        <p class="justified">I specialize in the MERN stack — MongoDB, Express.js, React, and Node.js — to build full-stack web applications that are fast, scalable, and user-friendly. I focus on clean code, user experience, and building scalable solutions using modern web stacks.</p>
+                        <a href="https://www.geeksforgeeks.org/mern-stack/" target="_blank">Learn More</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Software Engineering</h2>
+                        <p class="justified">I’m a software engineer passionate about designing and developing reliable, efficient, and scalable software solutions. With a strong foundation in programming, problem-solving, and system design, I can help building applications that align with both user needs and business goals.</p>
+                        <a href="https://www.geeksforgeeks.org/software-engineering-introduction-to-software-engineering/" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title">My Work</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="/images/textutils.png">
+                        <div class="layer">
+                            <h3>Textutils</h3>
+                            <p>Try Textutils - Text Manipulation Utility | Words Counter, Character counter, Uppercase to Lowercase, and many more!</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="/images/PixelMagic.png">
+                        <div class="layer">
+                            <h3>PixelMagic</h3>
+                            <p>PixelMagic - Free & Simple Picture Editing Website for your photos</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="/images/RPS Game.png">
+                        <div class="layer">
+                            <h3>Rock, Paper & Scissors</h3>
+                            <p>Play Rock, Paper & Scissors with a CPU - with silly cartoonish graphics</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <a href="#" class="btn">See More</a> -->
+            </div>
+        </div>
+
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-at"></i> hamzasajid1165@gmail.com</p>
+                        <p><i class="fa-solid fa-square-phone"></i> +92 312 0785886</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/share/1A56JdRASm/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/h.s_1605/profilecard/?igsh=MTd0MjdmY3JqZHgxbg==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://wa.me/923120785886?text=Hello%20Hamza%2C%20I%20Just%20saw%20your%20portfolio%20website%21" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.linkedin.com/in/hamza-sajid-625779283" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" onclick=""></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="text" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" placeholder="Your Message" rows="6"></textarea>
+                            <span id="form-msg"></span>
+                            <button type="submit" class="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    <footer>
+        <div class="copyright">
+            &copy All right reserved. Made by Hamza Sajid.
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        // Link to download CV
+    
+        function resumeDownload(){
+            document.getElementById('cvLink').click();
+        }
+
+        // Open Github link
+        function openGithub(){
+            window.open('https://github.com/hamza-1605', '_blank');
+        }
+
+        
+        
+        // Typed JS attributes
+        // ^1000 = 1 sec pause in between
+        // backSpeed = backspace
+        // startDelay = initial delay
+        // smartBackspace = only backspace what doesn't match the previous string
+        // cursorChar = character for cursor    &#128393  &#128394
+
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Software Engineer', 'MERN Expert'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 1000,
+            loop: true
+        });
+
+
+        // To display TABS in About Section
+        const tablists = document.getElementsByClassName('tab-links');
+        const tabcontents = document.getElementsByClassName('tab-contents');
+
+        function opentab(tabname){
+            for( tablist of tablists ){
+                tablist.classList.remove('active-link');
+            }
+            for( tabcontent of tabcontents ){
+                tabcontent.classList.remove('active-tab');
+            }
+
+            event.currentTarget.classList.add('active-link');
+            document.getElementById(tabname).classList.add('active-tab');
+        }
+
+
+        const list = document.getElementById('navList');
+        function openMenu(){
+            list.style.right = '0px' ;
+        }
+        function closeMenu(){
+            list.style.right = '-180px' ;
+        }
+    </script>
+
+    <!-- Script for forms -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwYTc28Defc4xZIYquUiYF5HtEpAhSnONdEHndxXXghVVy78I_Lw_Z148iEjomjDbvqtw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById('form-msg');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                form.reset();
+                msg.innerHTML = "Form submitted successfully!" ;
+                setTimeout(() => {
+                    msg.innerHTML = "" ;
+                }, 3500);
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
