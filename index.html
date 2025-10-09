@@ -338,7 +338,7 @@
         font-weight: 600;
         margin-bottom: 15px;
     }
-    .layer a{
+    .layer a, #brekko{
         color: yellow;
         text-decoration: none;
         background-color: #000000;
@@ -349,6 +349,12 @@
         text-align: center;
         font-size: 18px;
         margin-top: 20px;
+    }
+    #brekko{
+        border: none;
+    }
+    #brekko:hover{
+        cursor: pointer;
     }
 
     .btn{
@@ -363,8 +369,9 @@
         transition: 0.4s;
     }
     .btn:hover{
-        background-color: #6f40bb;
+        background-color: hsl(263, 49%, 49%);
     }
+
     /* --------------------------------------- */
     /* --------------- contact --------------- */
     /* --------------------------------------- */
@@ -636,7 +643,7 @@
                     </div>
                     <div class="about-col2">
                         <h1 class="sub-title">About Me</h1>
-                        <p class="justified">I'm Hamza Sajid, a passionate web developer and software engineering student with hands-on experience in building responsive and user-friendly web applications. I have a solid foundation in HTML, CSS, JavaScript, and an intermediate command over the MERN stack. Over the past few years, I've built multiple personal and university projects — from fun games and weather apps to full-stack platforms like iNotebook and e-commerce-style sites like Farm2Door.</p>
+                        <p class="justified">I'm Hamza Sajid, a passionate web developer, mobile app developer and a software engineer with hands-on experience in building responsive and user-friendly web and flutter applications. I have a solid foundation in HTML, CSS, JavaScript, and an intermediate command over the MERN stack. With respect to those, I have profiency in Flutter as well. Over the past few years, I've built multiple personal and university projects — from fun games and weather apps to full-stack platforms like iNotebook, e-commerce-style sites like Farm2Door and a breakfast recipe collection mobile app like Brekko.</p>
 
                         <div class="tab-group">
                             <div class="tab-links active-link" onclick="opentab('skills')">Skills</div>
@@ -646,9 +653,10 @@
 
                         <div class="tab-contents active-tab" id="skills">
                             <ul>
+                                <li><span>Flutter Developer</span><br>Mobile App Development</li>
                                 <li><span>Web Engineer</span><br>Web App Development</li>
-                                <li><span>Software Engineer</span><br>Sofware Development</li>
                                 <li><span>MERN Stack</span><br>Specialization in MERN Stack</li>
+                                <li><span>Software Engineer</span><br>Sofware Development</li>
                             </ul>
                         </div>
                         <div class="tab-contents" id="experience">
@@ -662,7 +670,7 @@
                             <ul>
                                 <li><span>2025</span><br>Bachelors in Software Engineering</li>
                                 <li><span>2021</span><br>Intermediate in Computer Science</li>
-                                <li><span></span><br></li>
+                                <li><span>2018</span><br>Matriculation in Computer Science</li>
                             </ul>
                         </div>
 
@@ -676,6 +684,12 @@
             <div class="container">
                 <h1 class="sub-title">My Services</h1>
                 <div class="services-list">
+                    <div>
+                        <i class="fa-brands fa-flutter"></i>
+                        <h2>Mobile App Developer</h2>
+                        <p class="justified">As a Flutter developer, I build cross-platform mobile applications with smooth performance and elegant UI. I focus on writing clean, efficient Dart code and creating scalable apps that deliver seamless user experiences on all platforms.</p>
+                        <a href="https://www.geeksforgeeks.org/flutter/flutter-tutorial/" target="_blank">Learn More</a>
+                    </div>
                     <div>
                         <i class="fa-solid fa-globe"></i>
                         <h2>Web Development</h2>
@@ -702,6 +716,15 @@
             <div class="container">
                 <h1 class="sub-title">My Work</h1>
                 <div class="work-list">
+                    <div class="work">
+                        <img src="images/brekko.png">
+                        <div class="layer">
+                            <h3>Brekko</h3>
+                            <p>Download Brekko - An android application that gives a various amounts of breakfast options, alongside their ingredients & recipe.</p>
+                            <button id="brekko" onclick="downloadBrekko()"><i class="fa-solid fa-download"></i></>
+                            <a id="brekkoLink" href="resources/Brekko.apk" download hidden></a>
+                        </div>
+                    </div>
                     <div class="work">
                         <img src="images/textutils.png">
                         <div class="layer">
@@ -774,6 +797,9 @@
         function resumeDownload(){
             document.getElementById('cvLink').click();
         }
+        function downloadBrekko(){
+            document.getElementById('brekkoLink').click();
+        }
 
         // Open Github link
         function openGithub(){
@@ -790,7 +816,7 @@
         // cursorChar = character for cursor    &#128393  &#128394
 
         var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Software Engineer', 'MERN Expert'],
+            strings: ['Web Developer', 'Flutter Developer', 'Software Engineer', 'MERN Expert'],
             typeSpeed: 60,
             backSpeed: 40,
             backDelay: 1000,
