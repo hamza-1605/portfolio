@@ -338,7 +338,7 @@
         font-weight: 600;
         margin-bottom: 15px;
     }
-    .layer a, #brekko{
+    .layer a, #brekko, #guessit{
         color: yellow;
         text-decoration: none;
         background-color: #000000;
@@ -350,10 +350,10 @@
         font-size: 18px;
         margin-top: 20px;
     }
-    #brekko{
+    #brekko, #guessit{
         border: none;
     }
-    #brekko:hover{
+    #brekko:hover, #guessit:hover{
         cursor: pointer;
     }
 
@@ -716,6 +716,15 @@
                 <h1 class="sub-title">My Work</h1>
                 <div class="work-list">
                     <div class="work">
+                        <img src="images/guessit.jpg">
+                        <div class="layer">
+                            <h3>GuessIt</h3>
+                            <p>Download GuessIt - A Number Guessing Game for Android.</p>
+                            <button id="guessit" onclick="downloadGuessit()"><i class="fa-solid fa-download"></i></>
+                            <a id="guessitLink" href="resources/GuessIt.apk" download hidden></a>
+                        </div>
+                    </div>
+                    <div class="work">
                         <img src="images/brekko.png">
                         <div class="layer">
                             <h3>Brekko</h3>
@@ -806,6 +815,9 @@
         }
         function downloadBrekko(){
             document.getElementById('brekkoLink').click();
+        }
+        function downloadGuessit(){
+            document.getElementById('guessitLink').click();
         }
 
         // Open Github link
